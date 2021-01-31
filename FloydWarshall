@@ -1,0 +1,12 @@
+for(k=1;k<=n;k++){
+	for(i=1;i<=n;i++){
+		for(j=1;j<=n;j++){
+			A[i,j] = Math.min(A[i,j],A[i,k]+A[k,j]);
+		}
+	}
+}
+
+// this algorithm is to find the shortest shortest paths in a directed weighted graph with positive or negative edge weights.
+to find the shortest distances between every pair of vertices in a given edge weighted directed Graph.
+
+Djikstra- single source shortest path.
