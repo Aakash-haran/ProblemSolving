@@ -1,0 +1,14 @@
+public int countTriplets(int arr[]){
+  int count = 0;
+  int arrLen = arr.length;
+  for(int i=0;i<arrLen; i++){
+    for(int j=i+1;j<=arrLen;j++){
+      for(k=j+1;j<=arrLen;k++){
+        if(arr[i]+arr[j] ==arr[k]){
+          count++
+        }
+      }
+    }
+  }
+  return count;
+}
