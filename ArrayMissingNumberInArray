@@ -1,0 +1,14 @@
+// no repeating numbers in an array solution.
+class Solution {
+    public int missingNumber(int[] nums) {
+        int numLen = nums.length;
+        int sumFormula = numLen * (numLen + 1)/2;
+        int sum=0;
+        int i;
+        for(i=0; i < numLen ; i++){
+            sum = sum + nums[i];
+            
+        }
+        return sumFormula - sum;
+    }
+}
