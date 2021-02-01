@@ -1,0 +1,9 @@
+brute force approach => try out all possible solutions and pick the desired results
+not for optimisation, used when you have multiple solutions and use those all solutions.
+
+state space tree -> used to represent the solution.
+
+bounding function --> contraint to stop at certain point and backtrack again.
+
+backtracking -> DFS
+branch and bound technique -> BFS(level wise)
