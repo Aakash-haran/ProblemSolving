@@ -1,0 +1,21 @@
+findEquilibriumIndex(int arr[]){
+  int len = arr.length;
+  if(len<0){
+    return "No index found";
+  }
+  int i,j;
+  int sum=0,leftSum=0;
+  for(i=0;i<len;i++) {
+    sum+ = arr[i];
+  }
+  for(j=0;j<len;j++){
+    sum- = arr[j];
+    if(leftSum == sum)
+      System.out.println(i);
+    leftSum+ = arr[j];
+  }
+
+}
+
+// idea is to iterate all over and fund the total sum;
+// then do subtract from sum, and add to the leftsum, at some point it will be 0, that is the equilibrium index
