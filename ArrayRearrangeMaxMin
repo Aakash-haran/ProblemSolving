@@ -1,0 +1,23 @@
+private void ReArrangeMaxMin(){
+  int arr[]={1,2,3,4,5,6};
+  int len = arr.length;
+  int maxIdx = len-1;
+  int minIdx = 0;
+  int maxEle = arr[maxIdx] + 1;
+  int i;
+  for(i=0; i< len;i++){
+    if(i%2==0){
+      arr[i] + = (arr[maxIdx] % maxEle) * maxEle;
+      maxIdx--;      
+    } else {
+      arr[i] + = (arr[minIdx] % maxEle) * maxEle ;
+      minIdx++;
+    }
+  }
+  int j;
+  for(j=0; j< len; j++){
+    arr[i] = arr[i] / maxEle;
+  }
+
+
+}
