@@ -1,0 +1,27 @@
+class Solution {
+
+    private static int longestSubsecutiveSubstring(String s) {
+      int longSubLen = 0;
+      int strLen = s.length();
+      if(strLen==1){
+        longSubLen = 1;
+      }
+      for(int i=0;i<strLen-1;i++){
+          int count=0;
+          while(i< strLen-1&& s.charAt(i)-s.charAt(i+1) == -1){
+            System.out.println(i);
+            i++;
+            count++;
+            longSubLen = Math.max(longSubLen, count+1);
+          }
+      }
+      System.out.println(longSubLen);
+      return longSubLen;       
+    }
+  public static void main(String[] args) {
+    String input ="hyrbskabcdef";
+    longestSubsecutiveSubstring(input);
+  }
+    
+   
+}
