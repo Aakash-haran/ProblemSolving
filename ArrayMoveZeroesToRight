@@ -1,0 +1,26 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int len = nums.length;
+        int left=0, right =0;
+        while(right < len){
+            if(nums[right] == 0){
+                right++;
+            }else{
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                left++;
+                right++;               
+            }
+            
+        }
+        for(int j=0;j<len;j++){
+            System.out.println(nums[j]);
+        }
+    }
+}
+
+// the approach is havnig two pointers left and right
+if we encounter zero, incrrement right pointer and left will be holding zero if it the sequence has zero , if not 
+next step left and right will be swapped and both pointers are incremented.
+if doesnt encounter zero , left and right will be same and incremented simultaneously  -> 1,2,3,4,5
