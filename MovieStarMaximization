@@ -1,0 +1,45 @@
+class Solution {
+  static class Movie{
+    private String movie;
+    private int start;
+    private int end;
+    public Movie(String movie,int start, int end){
+      this.movie = movie;
+      this.start = start;
+      this.end = end;
+    }
+    
+    @Override
+    public String toString() { 
+        return String.format(movie); 
+    }  
+  }
+  
+  private static void findMaxMovies(Movie movie[]){
+    int length = movie.length;
+    for(int i=0; i <=length-1; i ++){
+      Movie temp = movie[i+1];     
+      while(movie[j+1].start >  movie[j].end ){
+        System.out.println(movie[j]);
+        temp = movie[j]
+      }
+    System.out.println(i);
+    }
+  
+  }
+
+  public static void main(String[] args) {
+    Movie movie[] = new Movie[8];
+    movie[0]= new Movie("movie1",1,200);
+     movie[1]= new Movie("movie2",30,150);
+     movie[2]= new Movie("movie3",40,100);
+     movie[3]= new Movie("movie4",130,250);
+     movie[4]= new Movie("movie5",140,200);
+     movie[5]= new Movie("movie6",240,270);
+     movie[6]= new Movie("movie7",300,350);
+     movie[7]= new Movie("movie8",260,360);
+    
+      findMaxMovies(movie);
+    
+  }
+}
