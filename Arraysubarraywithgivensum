@@ -1,3 +1,40 @@
+// efficient dosnt require space
+// add along the array, if it exceeds at some point, subtract from the start
+class Solution {
+  private static void findIndexes(int arr[], int givenSum){
+      
+    int length = arr.length;
+    int currSum =0;
+    int start=0, end=-1 ;
+    int i;
+    for(i=0;i<length;i++){
+      currSum = currSum +arr[i];
+      if(currSum== givenSum){
+        end=i;
+      }
+      if(currSum > givenSum){
+        while(currSum <= givenSum){
+          currSum = currSum - arr[start];
+          start++;
+        }
+      }
+    }
+    if(end == -1){
+      System.out.println("No sum found");
+    }else{
+      System.out.println("found"+start +"and" + end);
+    }
+     
+  
+  }
+  
+  public static void main(String[] args) {
+    int arr[] = {11,0,-10,-1,2};
+    findIndexes(arr,0);
+  }
+}
+
+
 class Solution {
   private static void findIndexes(int arr[], int givenSum){
     int length = arr.length;
