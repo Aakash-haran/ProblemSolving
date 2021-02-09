@@ -1,0 +1,13 @@
+private int maximumSumContiguousSubAarray(int[] arr){
+  int arrLen = arr.length;
+  int i,maxSumSoFar=Integer.MIN_VALUE, maxSumHere=0;
+  for(i=0;i<arrLen;i++){
+    maxSumHere = maxSumHere + arr[i];
+    if(maxSumHere > maxSumSoFar){
+      maxSumSoFar = maxSumHere;
+    }else if(maxSumHere < 0){
+      maxSumHere =0;
+    }
+  }
+  return maxSumSoFar;
+}
