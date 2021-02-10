@@ -1,0 +1,15 @@
+wrong - need to check
+
+private int minPlatforms(int arrv[], int[] dept){
+  int minPlatforms=1;
+  int arrvLen = arrv.length;
+  int deptLen= dept.length;
+  for(int i=0; i < arrvLen; i++){
+    for(int j=i+1; j< deptLen; j++){
+      if((arrv[i] >= arrv[j] && arrv[i] <= dept[j]) || (arrv[j] >= arrv[i] && arrv[j] <= dept[i])){
+        minPlatforms++;
+      }
+    }
+  }
+  return minPlatforms;
+}
