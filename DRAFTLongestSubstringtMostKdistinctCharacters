@@ -1,0 +1,30 @@
+class Solution {
+  private static int findMax(String input, int k ){
+    int strLen = input.length();
+    int start=0, end =0;
+    int maxLength=0;
+    Map<Character,Integer> map = new HashMap<Character,Integer>();
+    while(end < strLen){
+      char currentChar = input.charAt(end);
+      map.put(currentChar,map.getOrDefault(currentChar,0)+1);
+      while(map.size() > k){
+        char charFromFront = input.charAt(start);
+        map.put(charFromFront, map.get(charFromFront)-1);
+        if(map.get(charFromFront) ==0){
+          map.remove(charFromFront);
+        }
+          start++;
+      }
+      maxLength = Math.max(end-start+1,maxLength);
+      end++;
+    }
+    System.out.println(end);
+    System.out.println(input.substring(start,strLen));
+    return maxLength;
+  }
+  public static void main(String[] args) {
+    String input ="aabacbebebe";
+    int k = 3;
+   System.out.println(findMax(input, k));
+  }
+}
